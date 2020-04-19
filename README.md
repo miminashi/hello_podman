@@ -6,13 +6,13 @@
 sudo sysctl kernel.unprivileged_userns_clone=1
 ```
 
-## Dockerコンテナのビルド
+## Dockerイメージのビルド
 
 ```sh
 docker build -t hellopodman .
 ```
 
-## VagrantVMにdockerイメージを転送
+## VagrantVMにDockerイメージを転送
 
 ```sh
 docker save hellopodman | vagrant ssh -c 'podman load'
