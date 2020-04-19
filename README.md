@@ -11,3 +11,9 @@ docker build -t hellopodman .
 ```sh
 docker save hellopodman | vagrant ssh -c 'podman load'
 ```
+
+## コンテナの実行（VagrantVM上）
+
+```sh
+podman run --rm hellopodman
+```
