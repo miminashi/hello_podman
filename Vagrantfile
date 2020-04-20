@@ -69,5 +69,7 @@ Vagrant.configure("2") do |config|
     curl -s -L https://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/Debian_10/Release.key | apt-key add -
     sudo apt-get update
     sudo apt-get -y install podman
+    echo "kernel.unprivileged_userns_clone = 1" > /etc/sysctl.d/userns.conf
+    sysctl kernel.unprivileged_userns_clone=1
   SHELL
 end
