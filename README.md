@@ -5,6 +5,12 @@
 - ローカルのDockerでビルドしたDockerイメージをVagrantVM上のpodmanで実行する
 - ネットワークはまだ疎通確認できていない
 
+## podmanについて
+
+- RedHatが開発しているDocker互換のコンテナエンジンらしい
+- daemon lessかつroot lessなのが特徴らしい
+- CLIのコマンド体系もdockerコマンドと互換性がある
+
 ## VagrantVMの準備
 
 ```sh
