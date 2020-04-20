@@ -1,9 +1,14 @@
 # hello_podman
 
-## 準備
+## 概要
+
+- ローカルのDockerでビルドしたDockerイメージをVagrantVM上のpodmanで実行する
+- ネットワークはまだ疎通確認できていない
+
+## VagrantVMの準備
 
 ```sh
-sudo sysctl kernel.unprivileged_userns_clone=1
+vagrant init
 ```
 
 ## Dockerイメージのビルド
@@ -12,16 +17,16 @@ sudo sysctl kernel.unprivileged_userns_clone=1
 docker build -t hellopodman .
 ```
 
-## VagrantVMにDockerイメージを転送
+## VagrantVMにDockerイメージを転送する
 
 ```sh
 docker save hellopodman | vagrant ssh -c 'podman load'
 ```
 
-## コンテナの実行（VagrantVM上）
+## VagrantVM上でコンテナを実行する
 
 ```sh
-podman run --rm hellopodman
+vagrant ssh -c 'podman run --rm hellopodman'
 ```
 
 ## その他
